@@ -7,20 +7,23 @@ class ProblematicProblem
 {
      class Program
     {
-          
-         bool cont = true;
-
-       
+                
 
         static void Main(string[] args)
         {
+            bool cont = true;
+
+            string contStr = "";
+
             Random rng = new Random(); 
 
             List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
             
-                bool cont = bool.Parse(Console.ReadLine());
+                contStr = Console.ReadLine();
+
+           cont =  contStr == "yes" ? true :  false;
 
             Console.WriteLine();
 
@@ -35,7 +38,12 @@ class ProblematicProblem
             Console.WriteLine();
 
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-            bool seeList = bool.Parse(Console.ReadLine());
+           // bool seeList = bool.Parse(Console.ReadLine());
+
+            contStr = Console.ReadLine();
+
+            bool seeList = contStr == "yes" ? true : false;
+
 
             if (seeList)
             {
@@ -109,7 +117,10 @@ class ProblematicProblem
 
                 Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
-                cont = bool.Parse(Console.ReadLine());
+                //cont = bool.Parse(Console.ReadLine());
+                contStr = Console.ReadLine();
+
+                 cont = contStr == "yes" ? true : false;
             }
         }
     }
