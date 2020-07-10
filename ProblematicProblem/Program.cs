@@ -37,7 +37,7 @@ class ProblematicProblem
             Console.WriteLine();
 
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-           // bool seeList = bool.Parse(Console.ReadLine());
+          
 
             contStr = Console.ReadLine().ToLower();
 
@@ -54,7 +54,7 @@ class ProblematicProblem
 
                 Console.WriteLine();
                 Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-                //bool addToList = bool.Parse(Console.ReadLine());
+               
                 Console.WriteLine();
                 contStr = Console.ReadLine().ToLower();
 
@@ -75,7 +75,7 @@ class ProblematicProblem
 
                     Console.WriteLine();
                     Console.WriteLine("Would you like to add more? yes/no: ");
-                     //addToList = bool.Parse(Console.ReadLine());
+                     
                     contStr = Console.ReadLine().ToLower();
 
                     addToList = contStr == "yes" ? true : false;
@@ -122,7 +122,7 @@ class ProblematicProblem
 
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
-                //cont = bool.Parse(Console.ReadLine());
+                
                 contStr = Console.ReadLine().ToLower();
 
                  cont = contStr == "redo" ? true : false;
