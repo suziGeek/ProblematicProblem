@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
 class ProblematicProblem
@@ -49,7 +48,7 @@ class ProblematicProblem
             {
                 foreach (string activity in activities)
                 {
-                    Console.Write($"{activity} ");
+                    Console.Write($"{activity}");
                     Thread.Sleep(250);
                 }
 
