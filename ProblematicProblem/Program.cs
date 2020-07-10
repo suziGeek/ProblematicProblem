@@ -21,7 +21,7 @@ class ProblematicProblem
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
             
-                contStr = Console.ReadLine();
+                contStr = Console.ReadLine().ToLower();
 
            cont =  contStr == "yes" ? true :  false;
 
@@ -40,9 +40,9 @@ class ProblematicProblem
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
            // bool seeList = bool.Parse(Console.ReadLine());
 
-            contStr = Console.ReadLine();
+            contStr = Console.ReadLine().ToLower();
 
-            bool seeList = contStr == "yes" ? true : false;
+            bool seeList = contStr == "sure" ? true : false;
 
 
             if (seeList)
@@ -55,8 +55,11 @@ class ProblematicProblem
 
                 Console.WriteLine();
                 Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-                bool addToList = bool.Parse(Console.ReadLine());
+                //bool addToList = bool.Parse(Console.ReadLine());
                 Console.WriteLine();
+                contStr = Console.ReadLine().ToLower();
+
+               bool addToList = contStr == "yes" ? true : false;
 
                 while (addToList)
                 {
@@ -73,7 +76,10 @@ class ProblematicProblem
 
                     Console.WriteLine();
                     Console.WriteLine("Would you like to add more? yes/no: ");
-                     addToList = bool.Parse(Console.ReadLine());
+                     //addToList = bool.Parse(Console.ReadLine());
+                    contStr = Console.ReadLine().ToLower();
+
+                    addToList = contStr == "yes" ? true : false;
                 }
             }
             
@@ -115,12 +121,12 @@ class ProblematicProblem
                     randomActivity = activities[randomNumber];
                 }
 
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
                 //cont = bool.Parse(Console.ReadLine());
-                contStr = Console.ReadLine();
+                contStr = Console.ReadLine().ToLower();
 
-                 cont = contStr == "yes" ? true : false;
+                 cont = contStr == "redo" ? true : false;
             }
         }
     }
