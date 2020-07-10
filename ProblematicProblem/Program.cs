@@ -7,13 +7,17 @@ class ProblematicProblem
 {
      class Program
     {
-        Random rng;        
+          
          bool cont = true;
 
-        List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
+       
 
         static void Main(string[] args)
         {
+            Random rng = new Random(); 
+
+            List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
+
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
             
                 bool cont = bool.Parse(Console.ReadLine());
@@ -61,7 +65,7 @@ class ProblematicProblem
 
                     Console.WriteLine();
                     Console.WriteLine("Would you like to add more? yes/no: ");
-                    string addToList = bool.Parse(Console.ReadLine());
+                     addToList = bool.Parse(Console.ReadLine());
                 }
             }
             
@@ -98,14 +102,14 @@ class ProblematicProblem
 
                     activities.Remove(randomActivity);
 
-                    string randomNumber = rng.Next(activities.Count);
+                     randomNumber = rng.Next(activities.Count);
 
-                    string randomActivity = activities[randomNumber];
+                    randomActivity = activities[randomNumber];
                 }
 
                 Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
-                bool cont = bool.Parse(Console.ReadLine());
+                cont = bool.Parse(Console.ReadLine());
             }
         }
     }
