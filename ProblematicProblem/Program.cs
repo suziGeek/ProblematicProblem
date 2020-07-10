@@ -78,7 +78,9 @@ class ProblematicProblem
                      
                     contStr = Console.ReadLine().ToLower();
 
-                    addToList = contStr == "yes" ? true : false;
+                                     
+                        addToList = contStr == "yes" ? true : false;
+                    
                 }
             }
             
