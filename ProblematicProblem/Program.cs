@@ -31,7 +31,7 @@ class ProblematicProblem
                 if (contStr != "yes" && contStr != "no")
                 { Console.WriteLine("Please enter yes or no!"); }
 
-                addToList = contStr == "yes" ? true : false;
+                cont = contStr == "yes" ? true : false;
 
                 Console.WriteLine();
 
@@ -55,11 +55,11 @@ class ProblematicProblem
                 if (contStr != "sure" && contStr != "no thanks")
                 { Console.WriteLine("Please enter sure or no thanks!"); }
 
-                seeList = contStr == "sure" ? true : false;
+                cont = contStr == "sure" ? true : false;
 
             } while (contStr != "sure" && contStr != "no thanks");
 
-            if (seeList)
+            if (cont)
             {
                 foreach (string activity in activities)
                 {
@@ -85,7 +85,7 @@ class ProblematicProblem
                 } while (contStr != "yes" && contStr != "no");
 
 
-                while (addToList)
+                while (cont)
                 {
                     Console.Write("What would you like to add? ");
                     string userAddition = Console.ReadLine();
@@ -108,7 +108,7 @@ class ProblematicProblem
                         if (contStr != "yes" && contStr != "no")
                         { Console.WriteLine("Please enter yes or no!"); }
 
-                        addToList = contStr == "yes" ? true : false;
+                        cont = contStr == "yes" ? true : false;
 
                     } while (contStr != "yes" && contStr != "no");
                     
