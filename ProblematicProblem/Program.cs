@@ -11,7 +11,7 @@ class ProblematicProblem
         static void Main(string[] args)
         {
             bool seeList;
-            bool cont;
+            bool cont = true;
             bool addToList;
             string contStr = "";
 
@@ -19,13 +19,23 @@ class ProblematicProblem
 
             List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
+           
+
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-            
+
+            do
+            {
+                Console.WriteLine();
                 contStr = Console.ReadLine().ToLower();
 
-           cont =  contStr == "yes" ? true :  false;
+                if (contStr != "yes" && contStr != "no")
+                { Console.WriteLine("Please enter yes or no!"); }
 
-            Console.WriteLine();
+                addToList = contStr == "yes" ? true : false;
+
+                Console.WriteLine();
+
+            } while (contStr != "yes" && contStr != "no");
 
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
