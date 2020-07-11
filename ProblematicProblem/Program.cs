@@ -10,8 +10,8 @@ class ProblematicProblem
 
         static void Main(string[] args)
         {
-            bool cont = true;
-
+            bool cont;
+            bool addToList;
             string contStr = "";
 
             Random rng = new Random(); 
@@ -48,17 +48,27 @@ class ProblematicProblem
             {
                 foreach (string activity in activities)
                 {
-                    Console.Write($"{activity}");
+                    Console.Write($" {activity}");
                     Thread.Sleep(250);
                 }
 
                 Console.WriteLine();
-                Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-               
-                Console.WriteLine();
-                contStr = Console.ReadLine().ToLower();
+                
+                
+                do {
+                    Console.Write("Would you like to add any activities before we generate one? yes/no: ");
 
-               bool addToList = contStr == "yes" ? true : false;
+                    Console.WriteLine();
+                    contStr = Console.ReadLine().ToLower();
+
+                    if(contStr != "yes" && contStr != "no")
+                    { Console.WriteLine("Please enter yes or no!"); }
+
+                     addToList = contStr == "yes" ? true : false;
+
+
+                } while (contStr != "yes" && contStr != "no");
+
 
                 while (addToList)
                 {
