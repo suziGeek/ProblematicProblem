@@ -79,7 +79,7 @@ class ProblematicProblem
                     if(contStr != "yes" && contStr != "no")
                     { Console.WriteLine("Please enter yes or no!"); }
 
-                     addToList = contStr == "yes" ? true : false;
+                     cont = contStr == "yes" ? true : false;
 
 
                 } while (contStr != "yes" && contStr != "no");
