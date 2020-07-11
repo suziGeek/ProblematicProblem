@@ -2,28 +2,35 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Answers
+namespace ProblematicProblem
 {
-    public class Answers
+    public class Questions
     {
+        
+        public bool seeList { get; set; }
+        public bool cont { get; set; }
+        public bool addToList { get; set; }
+        public string contStr { get; set; }
+
         public void Question()
         {
-            bool addToList;
-            string contStr;
             do
             {
-                
                 Console.WriteLine();
+
                 contStr = Console.ReadLine().ToLower();
 
                 if (contStr != "yes" && contStr != "no")
                 { Console.WriteLine("Please enter yes or no!"); }
 
                 addToList = contStr == "yes" ? true : false;
+                cont = contStr == "yes" ? true : false;
+                seeList = contStr == "yes" ? true : false;
 
                 Console.WriteLine();
 
             } while (contStr != "yes" && contStr != "no");
+
 
         }
     }

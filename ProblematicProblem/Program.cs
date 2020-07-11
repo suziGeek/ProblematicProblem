@@ -1,12 +1,13 @@
+using ProblematicProblem;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-class ProblematicProblem
+namespace ProblematicProblem
 {
-     class Program
+    class Program
     {
-                
+
 
         static void Main(string[] args)
         {
@@ -15,27 +16,31 @@ class ProblematicProblem
             bool addToList;
             string contStr = "";
 
-            Random rng = new Random(); 
+            Random rng = new Random();
 
             List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
-           
+
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
 
-            do
-            {
-                Console.WriteLine();
-                contStr = Console.ReadLine().ToLower();
+             Questions myQuestions = new Questions();
 
-                if (contStr != "yes" && contStr != "no")
-                { Console.WriteLine("Please enter yes or no!"); }
+            myQuestions.Question();
 
-                cont = contStr == "yes" ? true : false;
+            //do
+            //{
+            //    Console.WriteLine();
+            //    contStr = Console.ReadLine().ToLower();
 
-                Console.WriteLine();
+            //    if (contStr != "yes" && contStr != "no")
+            //    { Console.WriteLine("Please enter yes or no!"); }
 
-            } while (contStr != "yes" && contStr != "no");
+            //    addToList = contStr == "yes" ? true : false;
+
+            //    Console.WriteLine();
+
+            //} while (contStr != "yes" && contStr != "no");
 
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
@@ -49,17 +54,17 @@ class ProblematicProblem
             do
             {
                 Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-               
+
                 contStr = Console.ReadLine().ToLower();
 
                 if (contStr != "sure" && contStr != "no thanks")
                 { Console.WriteLine("Please enter sure or no thanks!"); }
 
-                cont = contStr == "sure" ? true : false;
+                seeList = contStr == "sure" ? true : false;
 
             } while (contStr != "sure" && contStr != "no thanks");
 
-            if (cont)
+            if (seeList)
             {
                 foreach (string activity in activities)
                 {
@@ -68,24 +73,25 @@ class ProblematicProblem
                 }
 
                 Console.WriteLine();
-                
-                
-                do {
+
+
+                do
+                {
                     Console.Write("Would you like to add any activities before we generate one? yes/no: ");
 
                     Console.WriteLine();
                     contStr = Console.ReadLine().ToLower();
 
-                    if(contStr != "yes" && contStr != "no")
+                    if (contStr != "yes" && contStr != "no")
                     { Console.WriteLine("Please enter yes or no!"); }
 
-                     cont = contStr == "yes" ? true : false;
+                    addToList = contStr == "yes" ? true : false;
 
 
                 } while (contStr != "yes" && contStr != "no");
 
 
-                while (cont)
+                while (addToList)
                 {
                     Console.Write("What would you like to add? ");
                     string userAddition = Console.ReadLine();
@@ -108,13 +114,13 @@ class ProblematicProblem
                         if (contStr != "yes" && contStr != "no")
                         { Console.WriteLine("Please enter yes or no!"); }
 
-                        cont = contStr == "yes" ? true : false;
+                        addToList = contStr == "yes" ? true : false;
 
                     } while (contStr != "yes" && contStr != "no");
-                    
+
                 }
             }
-            
+
             while (cont)
             {
                 Console.Write("Connecting to the database");
@@ -148,7 +154,7 @@ class ProblematicProblem
 
                     activities.Remove(randomActivity);
 
-                     randomNumber = rng.Next(activities.Count);
+                    randomNumber = rng.Next(activities.Count);
 
                     randomActivity = activities[randomNumber];
                 }
