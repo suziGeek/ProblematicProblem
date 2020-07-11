@@ -10,6 +10,7 @@ class ProblematicProblem
 
         static void Main(string[] args)
         {
+            bool seeList;
             bool cont;
             bool addToList;
             string contStr = "";
@@ -35,14 +36,18 @@ class ProblematicProblem
             int userAge = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
+            do
+            {
+                Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
+               
+                contStr = Console.ReadLine().ToLower();
 
-            Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-          
+                if (contStr != "sure" && contStr != "no thanks")
+                { Console.WriteLine("Please enter sure or no thanks!"); }
 
-            contStr = Console.ReadLine().ToLower();
+                seeList = contStr == "sure" ? true : false;
 
-            bool seeList = contStr == "sure" ? true : false;
-
+            } while (contStr != "sure" && contStr != "no thanks");
 
             if (seeList)
             {
