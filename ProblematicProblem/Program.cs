@@ -89,12 +89,18 @@ class ProblematicProblem
                     }
 
                     Console.WriteLine();
-                    Console.WriteLine("Would you like to add more? yes/no: ");
-                     
-                    contStr = Console.ReadLine().ToLower();
+                    do
+                    {
+                        Console.WriteLine("Would you like to add more? yes/no: ");
 
-                                     
+                        contStr = Console.ReadLine().ToLower();
+
+                        if (contStr != "yes" && contStr != "no")
+                        { Console.WriteLine("Please enter yes or no!"); }
+
                         addToList = contStr == "yes" ? true : false;
+
+                    } while (contStr != "yes" && contStr != "no");
                     
                 }
             }
@@ -136,13 +142,19 @@ class ProblematicProblem
 
                     randomActivity = activities[randomNumber];
                 }
+                do
+                {
+                    Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                    Console.WriteLine();
 
-                Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
-                Console.WriteLine();
-                
-                contStr = Console.ReadLine().ToLower();
+                    contStr = Console.ReadLine().ToLower();
 
-                 cont = contStr == "redo" ? true : false;
+                    if (contStr != "redo" && contStr != "keep")
+                    { Console.WriteLine("Please enter Keep or Redo!"); }
+
+                    cont = contStr == "redo" ? true : false;
+
+                } while (contStr != "redo" && contStr != "keep");
             }
         }
     }
