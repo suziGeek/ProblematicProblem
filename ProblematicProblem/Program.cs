@@ -11,9 +11,9 @@ namespace ProblematicProblem
 
         static void Main(string[] args)
         {
-            bool seeList;
+            bool seeList = true;
             bool cont = true;
-            bool addToList;
+            bool addToList = true;
             string contStr = "";
 
             Random rng = new Random();
@@ -26,7 +26,7 @@ namespace ProblematicProblem
 
              Questions myQuestions = new Questions();
 
-            myQuestions.Question();
+            myQuestions.Question(addToList);
 
             //do
             //{
@@ -51,18 +51,23 @@ namespace ProblematicProblem
             int userAge = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
-            do
-            {
-                Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
 
-                contStr = Console.ReadLine().ToLower();
+            Questions myQuestions2 = new Questions();
 
-                if (contStr != "sure" && contStr != "no thanks")
-                { Console.WriteLine("Please enter sure or no thanks!"); }
+            myQuestions2.Question(seeList);
 
-                seeList = contStr == "sure" ? true : false;
+            //do
+            //{
+            //    Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
 
-            } while (contStr != "sure" && contStr != "no thanks");
+            //    contStr = Console.ReadLine().ToLower();
+
+            //    if (contStr != "sure" && contStr != "no thanks")
+            //    { Console.WriteLine("Please enter sure or no thanks!"); }
+
+            //    seeList = contStr == "sure" ? true : false;
+
+            //} while (contStr != "sure" && contStr != "no thanks");
 
             if (seeList)
             {
