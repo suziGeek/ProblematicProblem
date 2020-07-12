@@ -11,9 +11,9 @@ namespace ProblematicProblem
 
         static void Main(string[] args)
         {
-            bool seeList = true;
-            bool cont = true;
-            bool addToList = true;
+            bool seeList = false;
+            bool cont = false;
+            bool addToList = false;
             string contStr = "";
 
             Random rng = new Random();
@@ -26,7 +26,7 @@ namespace ProblematicProblem
 
              Questions myQuestions = new Questions();
 
-            myQuestions.Question(addToList);
+            myQuestions.Question(ref addToList);
 
             //do
             //{
@@ -54,7 +54,9 @@ namespace ProblematicProblem
 
             Questions myQuestions2 = new Questions();
 
-            myQuestions2.Question(seeList);
+            Console.Write("Would you like to see the current list of activities? Yes/No : ");
+
+            myQuestions2.Question(ref seeList);
 
             //do
             //{
@@ -79,21 +81,26 @@ namespace ProblematicProblem
 
                 Console.WriteLine();
 
+                Console.Write("Would you like to add any activities before we generate one? yes/no: ");
 
-                do
-                {
-                    Console.Write("Would you like to add any activities before we generate one? yes/no: ");
+                Questions myQuestions3 = new Questions();
 
-                    Console.WriteLine();
-                    contStr = Console.ReadLine().ToLower();
+                myQuestions3.Question(ref addToList);
 
-                    if (contStr != "yes" && contStr != "no")
-                    { Console.WriteLine("Please enter yes or no!"); }
+                //do
+                //{
+                //    Console.Write("Would you like to add any activities before we generate one? yes/no: ");
 
-                    addToList = contStr == "yes" ? true : false;
+                //    Console.WriteLine();
+                //    contStr = Console.ReadLine().ToLower();
+
+                //    if (contStr != "yes" && contStr != "no")
+                //    { Console.WriteLine("Please enter yes or no!"); }
+
+                //    addToList = contStr == "yes" ? true : false;
 
 
-                } while (contStr != "yes" && contStr != "no");
+                //} while (contStr != "yes" && contStr != "no");
 
 
                 while (addToList)
@@ -110,18 +117,24 @@ namespace ProblematicProblem
                     }
 
                     Console.WriteLine();
-                    do
-                    {
-                        Console.WriteLine("Would you like to add more? yes/no: ");
 
-                        contStr = Console.ReadLine().ToLower();
+                    Console.WriteLine("Would you like to add more? yes/no: ");
 
-                        if (contStr != "yes" && contStr != "no")
-                        { Console.WriteLine("Please enter yes or no!"); }
+                    Questions myQuestions4 = new Questions();
+                    myQuestions4.Question(ref addToList);
 
-                        addToList = contStr == "yes" ? true : false;
+                    //do
+                    //{
+                    //    Console.WriteLine("Would you like to add more? yes/no: ");
 
-                    } while (contStr != "yes" && contStr != "no");
+                    //    contStr = Console.ReadLine().ToLower();
+
+                    //    if (contStr != "yes" && contStr != "no")
+                    //    { Console.WriteLine("Please enter yes or no!"); }
+
+                    //    addToList = contStr == "yes" ? true : false;
+
+                    //} while (contStr != "yes" && contStr != "no");
 
                 }
             }

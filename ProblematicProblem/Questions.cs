@@ -12,7 +12,7 @@ namespace ProblematicProblem
         public bool addToList { get; set; }
         public string contStr { get; set; }
 
-        public void Question(bool input)
+        public bool Question(ref bool input)
         {
             do
             {
@@ -23,11 +23,11 @@ namespace ProblematicProblem
                 if (contStr != "yes" && contStr != "no")
                 { Console.WriteLine("Please enter yes or no!"); }
 
-                input = contStr == "yes" ? true : false;
+               return input = contStr == "yes" ? true : false;
                 //cont = contStr == "yes" ? true : false;
                 //seeList = contStr == "yes" ? true : false;
 
-                Console.WriteLine();
+                
 
             } while (contStr != "yes" && contStr != "no");
 
