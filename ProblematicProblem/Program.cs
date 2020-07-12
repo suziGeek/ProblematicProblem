@@ -11,6 +11,8 @@ namespace ProblematicProblem
 
         static void Main(string[] args)
         {
+            string userAge;
+            bool userAge1 = true;
             bool seeList = true;
             bool cont = true;
             bool addToList = true;
@@ -33,8 +35,18 @@ namespace ProblematicProblem
 
             //Fix logical error does not pick up age always says too young for wine :-(**
             //Also add check for int input value
-            Console.Write("What is your age? ");
-            int userAge = int.Parse(Console.ReadLine());
+            do
+            {
+                Console.Write("What is your age? ");
+                 userAge = Console.ReadLine();
+
+                int i = 0;
+                userAge1 = int.TryParse(userAge, out i);
+
+                if (!userAge1) { Console.WriteLine(" Enter a valid number!"); }
+            } while (!userAge1);
+
+            int userAge2 = int.Parse(userAge);
 
             Console.WriteLine();
 
@@ -109,7 +121,7 @@ namespace ProblematicProblem
 
                 string randomActivity = activities[randomNumber];
 
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if (userAge2 > 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");

@@ -24,11 +24,7 @@ namespace ProblematicProblem
                 { Console.WriteLine("Please enter yes or no!"); }
 
                return input = contStr == "yes" ? true : false;
-                //cont = contStr == "yes" ? true : false;
-                //seeList = contStr == "yes" ? true : false;
-
                 
-
             } while (contStr != "yes" && contStr != "no");
 
 
