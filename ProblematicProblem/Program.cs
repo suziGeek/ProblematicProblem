@@ -11,36 +11,20 @@ namespace ProblematicProblem
 
         static void Main(string[] args)
         {
-            bool seeList = false;
-            bool cont = false;
-            bool addToList = false;
-            string contStr = "";
+            bool seeList = true;
+            bool cont = true;
+            bool addToList = true;
+           string contStr = "";
 
             Random rng = new Random();
 
             List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
-
-
 
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
 
              Questions myQuestions = new Questions();
 
             myQuestions.Question(ref addToList);
-
-            //do
-            //{
-            //    Console.WriteLine();
-            //    contStr = Console.ReadLine().ToLower();
-
-            //    if (contStr != "yes" && contStr != "no")
-            //    { Console.WriteLine("Please enter yes or no!"); }
-
-            //    addToList = contStr == "yes" ? true : false;
-
-            //    Console.WriteLine();
-
-            //} while (contStr != "yes" && contStr != "no");
 
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
@@ -56,20 +40,7 @@ namespace ProblematicProblem
 
             Console.Write("Would you like to see the current list of activities? Yes/No : ");
 
-            myQuestions2.Question(ref seeList);
-
-            //do
-            //{
-            //    Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-
-            //    contStr = Console.ReadLine().ToLower();
-
-            //    if (contStr != "sure" && contStr != "no thanks")
-            //    { Console.WriteLine("Please enter sure or no thanks!"); }
-
-            //    seeList = contStr == "sure" ? true : false;
-
-            //} while (contStr != "sure" && contStr != "no thanks");
+            myQuestions2.Question(ref seeList);         
 
             if (seeList)
             {
@@ -86,22 +57,6 @@ namespace ProblematicProblem
                 Questions myQuestions3 = new Questions();
 
                 myQuestions3.Question(ref addToList);
-
-                //do
-                //{
-                //    Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-
-                //    Console.WriteLine();
-                //    contStr = Console.ReadLine().ToLower();
-
-                //    if (contStr != "yes" && contStr != "no")
-                //    { Console.WriteLine("Please enter yes or no!"); }
-
-                //    addToList = contStr == "yes" ? true : false;
-
-
-                //} while (contStr != "yes" && contStr != "no");
-
 
                 while (addToList)
                 {
@@ -122,19 +77,6 @@ namespace ProblematicProblem
 
                     Questions myQuestions4 = new Questions();
                     myQuestions4.Question(ref addToList);
-
-                    //do
-                    //{
-                    //    Console.WriteLine("Would you like to add more? yes/no: ");
-
-                    //    contStr = Console.ReadLine().ToLower();
-
-                    //    if (contStr != "yes" && contStr != "no")
-                    //    { Console.WriteLine("Please enter yes or no!"); }
-
-                    //    addToList = contStr == "yes" ? true : false;
-
-                    //} while (contStr != "yes" && contStr != "no");
 
                 }
             }
