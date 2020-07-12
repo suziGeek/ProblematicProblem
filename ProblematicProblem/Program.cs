@@ -50,11 +50,11 @@ namespace ProblematicProblem
 
             Console.WriteLine();
 
-            Questions myQuestions2 = new Questions();
+          
 
             Console.Write("Would you like to see the current list of activities? Yes/No : ");
 
-            myQuestions2.Question(ref seeList);         
+            myQuestions.Question(ref seeList);         
 
             if (seeList)
             {
@@ -66,11 +66,9 @@ namespace ProblematicProblem
 
                 Console.WriteLine();
 
-                Console.Write("Would you like to add any activities before we generate one? yes/no: ");
+                Console.Write("Would you like to add any activities before we generate one? yes/no: ");                
 
-                Questions myQuestions3 = new Questions();
-
-                myQuestions3.Question(ref addToList);
+                myQuestions.Question(ref addToList);
 
                 while (addToList)
                 {
@@ -88,9 +86,8 @@ namespace ProblematicProblem
                     Console.WriteLine();
 
                     Console.WriteLine("Would you like to add more? yes/no: ");
-
-                    Questions myQuestions4 = new Questions();
-                    myQuestions4.Question(ref addToList);
+                  
+                    myQuestions.Question(ref addToList);
 
                 }
             }
