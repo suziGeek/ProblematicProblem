@@ -14,7 +14,7 @@ namespace ProblematicProblem
             bool seeList = true;
             bool cont = true;
             bool addToList = true;
-           string contStr = "";
+            string contStr = "";
 
             Random rng = new Random();
 
@@ -31,6 +31,8 @@ namespace ProblematicProblem
 
             Console.WriteLine();
 
+            //Fix logical error does not pick up age always says too young for wine :-(**
+            //Also add check for int input value
             Console.Write("What is your age? ");
             int userAge = int.Parse(Console.ReadLine());
 
