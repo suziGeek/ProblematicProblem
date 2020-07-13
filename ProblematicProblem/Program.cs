@@ -26,7 +26,7 @@ namespace ProblematicProblem
 
              Questions myQuestions = new Questions();
 
-            myQuestions.Question(ref addToList);
+            myQuestions.Question(out addToList);
 
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
@@ -54,7 +54,7 @@ namespace ProblematicProblem
 
             Console.Write("Would you like to see the current list of activities? Yes/No : ");
 
-            myQuestions.Question(ref seeList);         
+            myQuestions.Question(out seeList);         
 
             if (seeList)
             {
@@ -68,7 +68,7 @@ namespace ProblematicProblem
 
                 Console.Write("Would you like to add any activities before we generate one? yes/no: ");                
 
-                myQuestions.Question(ref addToList);
+                myQuestions.Question(out addToList);
 
                 while (addToList)
                 {
@@ -87,7 +87,7 @@ namespace ProblematicProblem
 
                     Console.WriteLine("Would you like to add more? yes/no: ");
                   
-                    myQuestions.Question(ref addToList);
+                    myQuestions.Question(out addToList);
 
                 }
             }
